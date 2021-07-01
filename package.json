@@ -4,15 +4,14 @@
   "main": "src/app.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon src/app.js",
+    "start": "nodemon --inspect src/app.js",
     "watch": "sass src/resources/scss/app.scss:src/public/css/app.css -w",
     "prettier": "onchange \"**/*.js\" -- prettier --write {{changed}}"
   },
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.3.2",
-    "husky": "^7.0.0",
-    "lint-staged": "^11.0.0",
+    "mongoose": "^5.13.0",
     "onchange": "^7.1.0",
     "prettier": "^2.3.2"
   },
