@@ -1,13 +1,15 @@
+const mongoArrayToObject = require('../../utils/mongoArrayToObject');
 const CourseModel = require('../models/CourseModel');
 
 class SiteController {
   // [get] /news
   index(req, res, next) {
     // read docs from db
-    // promise way
     CourseModel.find({})
       .then(courses => {
-        res.render('home', { courses: courses.map(course => course.toObject()) });
+        res.render('home', {
+          courses: mongoArrayToObject(courses),
+        });
       })
       .catch(next);
   }

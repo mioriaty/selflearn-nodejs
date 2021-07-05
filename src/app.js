@@ -8,6 +8,7 @@ const db = require('./config/db');
 const app = express();
 const port = 8866;
 
+// handle static files (css, images, ...)
 app.use(express.static(path.join(__dirname, 'public')));
 
 // connect db

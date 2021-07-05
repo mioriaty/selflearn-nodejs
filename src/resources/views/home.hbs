@@ -1,7 +1,18 @@
-<ul>
-   {{#each courses}}
-      <li>{{this.name}}
-        <br>
-        {{this.description}}</li>
+<div class='container pt-5'>
+  <button class="btn btn-primary mb-5">
+    <a href="/course/create" class="text-decoration-none text-white">create course</a>
+  </button>
+  <div class='row'>
+    {{#each courses}}
+      <div class='col-md-3'>
+        <a class='card text-decoration-none text-black' href="/course/{{this.tag}}">
+          <img src='{{this.image}}' class='card-img-top' alt='{{this.name}}' />
+          <div class='card-body'>
+            <h5 class="card-title">{{this.name}}</h5>
+            <p class='card-text'>{{this.description}}</p>
+          </div>
+        </a>  
+      </div>
     {{/each}}
-</ul>
+  </div>
+</div>
